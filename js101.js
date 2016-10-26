@@ -124,28 +124,28 @@
 // factoring(81);
 
 
-function cipher(number, text) {
-  var alphabet = 'abcdefghijklmnopqrstuvwxyz';
-  var firstOffset = alphabet.slice(0, number);
-  var secondOffset = alphabet.slice(number, 27);
-  var finalOffset = secondOffset.concat(firstOffset);
-  var cipher = '';
-
-  for (i = 0; i < text.length; i++ ) {
-    startSlice = 0;
-    if (text[i] === ' ') {
-
-
-    }
-    char = finalOffset.search(text[i]);
-    console.log(char);
-    cipher = cipher.concat(finalOffset[char]);
-    console.log(text[i]);
-  }
-  console.log(cipher);
-}
-
-cipher(10, 'hey, how are you?');
+// function cipher(number, text) {
+//   var alphabet = 'abcdefghijklmnopqrstuvwxyz';
+//   var firstOffset = alphabet.slice(0, number);
+//   var secondOffset = alphabet.slice(number, 27);
+//   var finalOffset = secondOffset.concat(firstOffset);
+//   var cipher = '';
+//
+//   for (i = 0; i < text.length; i++ ) {
+//     startSlice = 0;
+//     if (text[i] === ' ') {
+//
+//
+//     }
+//     char = finalOffset.search(text[i]);
+//     console.log(char);
+//     cipher = cipher.concat(finalOffset[char]);
+//     console.log(text[i]);
+//   }
+//   console.log(cipher);
+// }
+//
+// cipher(10, 'hey, how are you?');
 
 // function sumNumbers(numbers) {
 //   var finalValue = 0;
@@ -171,10 +171,28 @@ cipher(10, 'hey, how are you?');
 
 // function matrixAdd(matrix1, matrix2) {
 //   var newMatrix = [[], []];
-//   for (i = 0; i < matrix1[0].length; i++) {
-//     newMatrix[0][0] = matrix1[i] + matrix2[i];
+//   for (var i = 0; i < matrix1[0].length; i++) {
+//     newMatrix[0][i] = matrix1[0][i] + matrix2[0][i];
+//     newMatrix[1][i] = matrix1[1][i] + matrix2[1][i];
 //   }
+//   // console.log(matrix1[0][0]);
+//   // console.log(matrix2[0][0]);
+//   console.log(newMatrix);
 // }
+//
+// matrixAdd([[1,3],[2,4]], [[5,2],[1,0]]);
+
+
+function matrixMultiply(matrix1, matrix2) {
+  var newMatrix = [[],[]];
+  for (var i = 0; i < matrix1[0].length; i++ ) {
+    newMatrix[0][i] = (matrix1[0][0] * matrix2[0][i]) + (matrix1[0][1] * matrix2[1][i]);
+    newMatrix[1][i] = (matrix1[1][0] * matrix2[0][i]) + (matrix1[1][1] * matrix2[1][i]);
+  }
+  console.log(newMatrix);
+}
+
+matrixMultiply([[2, 4], [3, 4]],[[5, 2], [3, 1]]);
 // function playRPS() {
 //   play = true;
 //   if (play === true) {
